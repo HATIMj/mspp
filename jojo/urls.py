@@ -12,4 +12,4 @@ urlpatterns = [
     path('createnewaccount',views.cna,name="CreateNewAccount")
 
 ]
-]
+

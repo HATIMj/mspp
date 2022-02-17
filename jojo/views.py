@@ -34,7 +34,7 @@ urlpatterns = [
 """
 from django.shortcuts import render,HttpResponse,redirect
 from datetime import datetime
-from myapp.models import Contact
+from jojo.models import Contact
 from django.contrib import  messages
 from django.contrib.auth.models import User
 from django.contrib.auth import login,logout,authenticate
