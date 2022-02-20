@@ -80,7 +80,15 @@ def cna(request):
     if request.method=="POST":
         usrn=request.POST.get("username")
         passwd=request.POST.get("password")
-        user=User.objects.create_user()
+        cpasswd=request.POST.get("cpassword")
+        emal=request.POST.get("email")
+        if passwd==cpasswd:
+           user=User.objects.create_user(usrn,emal,passwd)
+           user.save()
+           return redirect("/login")
+        else:
+            return redirect("/createnewaccount")
+            messages.success(request,'Passwords did not match')
 
 
     return render(request,'create.html')
